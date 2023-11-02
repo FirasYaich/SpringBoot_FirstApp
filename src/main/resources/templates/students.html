@@ -1,0 +1,50 @@
+<body>
+	
+	<form th:action="@{/students/save}" method="POST">
+		<table>
+			<tr>
+				<td>id</td>
+				<td><input type="number" name="id" /></td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="name" /></td>
+			</tr>
+			<tr>
+				
+			<tr>
+				<td>Gender</td>
+				<td>
+				
+				<select name="gender">
+					<option value="M"> Masculin</option>
+					<option value="F"> Feminin</option>	
+				</select> 
+				
+				</td>
+			</tr>
+			<tr>
+				
+				<td></td>
+				<td><input type="submit" value="save" /></td>
+			</tr>
+		</table>
+
+
+	</form>
+</hr>
+
+
+
+	
+	<h1>List of Students</h1>
+	<table border="1">
+		<tr><th>Id</th><th>Name</th><th>Gender</th></tr>
+		<tr th:each="student: ${students}">
+			<td th:text="${student.id}" />
+			<td th:text="${student.name}" />
+			<td th:text="${student.gender}" />
+		</tr>
+	</table>
+
+</body>
