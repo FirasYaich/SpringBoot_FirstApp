@@ -25,6 +25,15 @@ public class StudentService {
 		return students;
 	}
 	
+	public void delete(Integer id) {
+		// students.remove(new StudentDto(id, null, ' '));
+		for (StudentDto std : students) {
+			if (std.getId().equals(id)) {
+				students.remove(std);
+				break;
+			}
+		}
+	}
 	
 	
 	
